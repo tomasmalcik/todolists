@@ -16,11 +16,11 @@ Each request that has body in it, is validated before any code that could potent
 ### API
 This project uses MVC model on backEnd. It is split to
 - Model
--- Used for mongoose schemas
+    - Used for mongoose schemas
 - View
--- Displaying frontend pages from routes
+    - Displaying frontend pages from routes
 - Controller (routes)
--- Houses every route on website (frontEnd and backEnd).
+    - Houses every route on website (frontEnd and backEnd).
 #### REST
 ### FrontEnd
 #### JS 
