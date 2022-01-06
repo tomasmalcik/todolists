@@ -1,0 +1,56 @@
+<div class="row optionGroup security-options">
+    <div class="col-lg-10 offset-lg-1 pasword optionList">
+        <h3>Change Password</h3>
+        <form onsubmit="changePassword(event)">
+            <div class="col-lg-6">
+                <div class="form-group curr_pwd">
+                    <span class="highlight"></span>
+                    <input type="password" class="form-control" name="curr_password" id="curr_password" min="6" required />
+                    <label for="curr_password">Current Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <span class="highlight"></span>
+                        <input type="password" class="form-control" name="new_password" id="new_password" min="6" required />
+                        <label for="new_password">New Password</label>
+                    </div>                   
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <span class="highlight"></span>
+                        <input type="password" class="form-control" name="new_password2" id="new_password2" min="6" required />
+                        <label for="new_password2">Confirm New Password</label>
+                    </div>                   
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-dark">Change Password</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-lg-10 offset-lg-1 email optionList">
+        <h3>Change email</h3>
+        <form onsubmit="changeEmail(event)">
+            <div class="col-lg-6">
+                <div class="form-group curr_pwd">
+                    <span class="highlight"></span>
+                    <input type="password" class="form-control" name="curr_password" id="curr_password_email" min="6" required />
+                    <label for="curr_password">Current Password</label>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group curr_pwd">
+                    <span class="highlight"></span>
+                    <input type="email" class="form-control" name="email" id="email" min="6" required />
+                    <label for="email">New Email</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-dark">Change Email</button>
+            </div>
+        </form>        
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<%- include('../partials/popup_workspaces.ejs') %> 
+
+<div class="wrapper container-fluid">
+    <div class="row wrapper-content">
+        <div class="col-lg-2 sidebar">
+            <div class="nav-logo">
+                <span>ToDo - App</span>
+            </div>
+            <div class="sidebar-content">
+                <h3>Workspaces</h3>
+
+                <ul>
+                    <li><a href="#" onclick="addWorkspace()"><i class="fas fa-plus"></i> Add Workspace</a></li>
+                    <li><a href="#" onclick="openImport()"><i class="fas fa-file-upload"></i> Import Workspace</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-10 content">
+            <%- include("../partials/navbar.ejs") %> 
+            <div class="items-content container">
+              <div class="breadcrumb">
+                Workspaces > dashboard
+              </div>
+              <div class="col-lg-10 workspace-wrapper">
+                <div>
+                  <div class="no-work">
+                    <h4 class="no-workspaces">No workspaces created</h4>
+                    <div onclick="addWorkspace()" class="create-workspace full">
+                      <span>Create Workspace</span>
+                    </div>
+                  </div>
+                  <div class="row" id="workspaces">
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script defer src="./js/components/workspace.js"></script>
+<script src="./js/logic/workspaces.js">

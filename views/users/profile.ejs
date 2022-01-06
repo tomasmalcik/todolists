@@ -1,0 +1,28 @@
+<div class="wrapper container-fluid">
+    <div class="row wrapper-content">
+        <div class="col-lg-2 sidebar">
+            <div class="nav-logo">
+                <span>ToDo - App</span>
+            </div>
+            <div class="sidebar-content">
+                <h3>Profile</h3>
+                <ul>
+                    <li><a href="#" onclick="showOptions('general-options')"><i class="fas fa-user"></i> General</a></li>
+                    <li><a href="#" onclick="showOptions('security-options')"><i class="fas fa-user-shield"></i>Security</a></li> 
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-10 prof content">
+            <%- include("../partials/navbar.ejs") %> 
+            <div class="container items-content">
+                <div class="breadcrumb">
+                    Profile > General Settings
+                  </div>
+                  <%- include("../partials/generalSettings.ejs") %> 
+                  <%- include("../partials/securitySettings.ejs") %> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<script defer src="./js/logic/profile.js"></script>

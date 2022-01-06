@@ -1,0 +1,44 @@
+<%- include('../partials/popup_workspace.ejs') %> 
+<div class="wrapper container-fluid">
+    <div class="row wrapper-content">
+        <div class="col-lg-2 sidebar">
+            <div class="nav-logo">
+                <span>ToDo - App</span>
+            </div>
+            <div class="sidebar-content">
+                <h3>Workspace</h3>
+
+                <ul>
+                    <li><a href="#" onclick="addList()"><i class="fas fa-plus"></i> Add List</a></li>
+                    <li><a href="#" onclick="openListImport()"><i class="fas fa-file-upload"></i> Import List</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content col-lg-10">
+            <%- include("../partials/navbar.ejs") %> 
+            <div class="items-content container">
+                <div class="col-lg-10 breadcrumb">
+                    <span class="curr_workspace_bread" style="margin-right: 5px;"></span> > Dashboard
+                    <div class="filter">
+                        <span onclick="openFilter()"><i class="fas fa-filter"></i> Filter</span>
+                        <div>
+                            <a href="#" onclick="showLists(this, '.finished')"><i class="far fa-check-circle"></i> Finished</a>
+                            <a href="#" onclick="showLists(this, '.ongoing')"><i class="far fa-dot-circle"></i> Ongoing</a>
+                            <a href="#" onclick="showLists(this, '.notStarted')"><i class="far fa-times-circle"></i> Not started</a>
+                            <a href="#" onclick="showLists(this, '')"><i class="far fa-circle"></i> All</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10 workspace-wrapper">
+                    <div class="row lists">
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<script src="../../js/components/list.js"></script>
+<script defer src="../../js/logic/workspace.js">

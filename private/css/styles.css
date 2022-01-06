@@ -1,0 +1,795 @@
+/*
+-----------------------------------------
+Styles used for the rest of application
+-----------------------------------------
+*/
+
+body {
+    position: relative;
+    background: #F7F7F7!important;
+}
+
+i {
+    font-size: 15px;
+    margin-right: 15px;
+    width: 15px;
+    height: 15px;
+}
+
+form-control:focus {
+    outline: none!important;
+    box-shadow: none!important;
+}
+.hint {
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    cursor: pointer;
+    color:rgb(155,155,155);
+    transition: .3s ease;
+}
+
+.hint:hover i {
+    color: #1b242f;
+}
+.hintText {
+    position: absolute;
+    left: -60px;
+    width: 140px;
+    text-align: center;
+    padding: 5px 0px;
+    top: -40px;
+    color: white;
+    background: #1b242f;
+    border-radius: 0.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+    z-index: 3;
+}
+
+.hintText::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #1b242f transparent transparent transparent;
+}
+
+.hint:hover .hintText{
+    opacity: 1;
+}
+
+.popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#jsonImport {
+    border: 2px #1b242f solid;
+}
+
+.popup-content {
+    border-radius: 0.25rem;
+    background: white;
+    padding: 20px;
+}
+
+.popup-content.col-lg-4 h3{
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.popup-content .form-group {
+    position: relative;
+}
+
+.popup-content form .form-control,
+form .form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 2px rgb(155,155,155) solid;
+    border-radius: 0;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.popup-content form .form-control:focus, .popup-content form .form-control:hover,
+form .form-control:focus, form .form-control:hover {
+    box-shadow: none!important;
+    border-bottom: 2px #e31b6d solid!important
+}
+
+.popup-content {
+    position: relative;
+}
+
+.popup-content .close {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    color: rgba(155,155,155,0.95);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.popup-content form button {
+    background: transparent;
+    font-size: 20px;
+    border: 2px #1b242f solid;
+    font-weight: 400;
+    margin-bottom: 15px;
+    transition: .3s ease-in-out;
+}
+
+.popup-content form button:hover {
+    background: #1b242f;
+    color: white;
+}
+
+.popup-content form label,
+form label {
+    color: #B1B1B1;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 0;
+    opacity: 0.5;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+    line-height: 35px;
+}
+
+.popup-content form .form-control:focus ~ label,
+form .form-control:focus ~ label {
+    top: -25px;
+    left: 0;
+    font-size: 12px;
+    color: #e31b6d;
+    opacity: 1;
+}
+
+.popup-content form .form-control:valid ~ label,
+form .form-control:valid ~ label {
+    top: -25px;
+    left: 0;
+    font-size: 12px;
+    color: #B1B1B1;
+    opacity: 1;
+}
+
+.popup-content.export-window h3 {
+    position: relative;
+}
+
+.popup-content.export-window h3 a {
+    font-size: 13px;
+    position: absolute;
+    bottom: 0;
+    margin-left: 10px;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.popup-content.export-window textarea {
+    background: white!important;
+}
+
+.banner {
+    position: fixed;
+    min-width: 300px;
+    height: 60px;
+    background: rgb(248, 215, 218);
+    top: 15px;
+    border-right: 10px solid rgb(245, 198, 203);
+    transition: all 0.4s ease-in-out 0s;
+    left: -100%;
+    display: flex;
+    padding: 0px 15px;
+    align-items: center;
+    color: #721c24;
+    z-index: 100;
+}
+
+.banner.shown{
+    left: 0;
+}
+
+.wrapper-content {
+    height: 100vh;
+}
+
+.sidebar {
+    background: #1b242f;
+}
+
+.sidebar .nav-logo {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    border-bottom: 1px rgba(155,155,155,0.5) solid;
+}
+
+.sidebar .sidebar-content {
+    padding-top: 30px;
+}
+
+.sidebar .sidebar-content h3 {
+    color: white;
+    font-size: 25px;
+    font-weight: 100;
+    padding-bottom: 15px;
+    border-bottom: 1px rgba(155,155,155,0.1) solid;
+}
+
+.sidebar .sidebar-content ul {
+    padding: 0;
+    margin-top: 15px;
+}
+
+.sidebar .sidebar-content ul li {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.sidebar .sidebar-content ul li a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-weight: 100;
+    transition: .3s ease-in-out;
+}
+
+.sidebar .sidebar-content ul li:hover a{
+    color: #e31b6d;
+}
+
+.wrapper .content {
+    padding: 0;
+}
+
+.content .navbar.navbar-light {
+    background: white!important;
+    padding: 10px 0px!important;
+}
+.collapse {
+    justify-content: flex-end;
+    padding: 0px 30px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.content .navbar-nav {
+    align-items: center;
+}
+
+.content .navbar .navbar-nav li{
+    margin-left: 15px;
+}
+
+.content .navbar .usr-dropdown {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 0.35rem;
+    cursor: pointer;
+    transition: .3s ease;
+    margin-left: 20px;
+    position: relative;
+}
+
+.content .navbar .usr-dropdown:hover {
+    background: rgba(155,155,155,0.1)
+}
+
+.content .navbar .usr-dropdown.selected {
+    background: rgba(155,155,155,0.1)
+}
+
+.content .navbar .usr-dropdown-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: calc(100% + 15px);
+    width: 250px;
+    /* padding: 10px; */
+    background: white;
+    border-radius: 0.35rem;
+    border: 1px rgba(155,155,155,0.4) solid;
+    box-shadow: 0px 1px 3px rgb(155 155 155 / 30%);
+    right: 0;
+    z-index: 99;
+    display: none;
+}
+
+.content .navbar .usr-dropdown-menu.selected {
+    display: flex;
+}
+
+.content .navbar .usr-dropdown-menu a {
+    margin-bottom: 5px;
+    color: gray;
+    text-decoration: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.content .navbar .usr-dropdown-menu a:hover {
+    background: rgb(245,245,245)
+}
+
+.content .navbar .usr-dropdown-menu .group-dropdown {
+    border-bottom: 1px lightgray solid;
+}
+
+.content .navbar .usr-dropdown-menu .group-dropdown h6 {
+    padding: 20px 10px 10px 10px;
+}
+
+.content .navbar .usr-dropdown i {
+    margin-left: 10px;
+    font-size: 13px;
+    width: 13px;
+    height: 13px;
+    margin-right: 0;
+}
+
+.content .navbar .usr {
+    width: 40px;
+    height: 40px;
+    background: red;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    border: 1px black solid;
+}
+
+.content .items-content {
+    display: flex;
+    flex: 1;
+    align-content: flex-start;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.content .items-content .breadcrumb {
+    position: absolute;
+    top: 30px;
+    text-transform: capitalize;
+    width: calc(83.3333333% - 30px);
+    padding-right: 30px;
+}
+
+.content .items-content .breadcrumb .filter {
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+}
+
+.content .items-content .breadcrumb .filter span {
+    font-size: 20px;
+    color: #A30042;
+}
+
+.content .items-content .breadcrumb .filter i {
+    margin-right: 5px;
+}
+
+.content .items-content .breadcrumb .filter div.shown {
+    display: flex;
+}
+
+.content .items-content .breadcrumb .filter div {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: calc(100% + 65px);
+    padding: 10px;
+    background: white;
+    z-index: 999;
+    box-shadow: 0px 1px 3px rgb(230 230 230);
+    right: 0px;
+}
+
+.content .items-content .breadcrumb .filter div a:hover {
+    color: #e31b6d;
+}
+
+.content .items-content .breadcrumb .filter div a:last-child {
+    color: #e31b6d;
+}
+
+.content .items-content .breadcrumb .filter div a {
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.content .items-content .create-workspace.full {
+    padding: 40px 100px;
+    font-size: 30px;
+    color: darkgray;
+    border-radius: 0.3rem;
+    border: 3px darkgray solid;
+    border-style: dashed;
+    display: flex;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.content .items-content .create-workspace:hover {
+    border-color: black;
+    color: black;
+}
+
+.content .workspace-wrapper {
+    flex-direction: column;
+    height: 100%;
+    padding-top: 150px;
+}
+
+.content .items-content .no-work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+.content .items-content h4.no-workspaces {
+    color: rgba(155,155,155,0.8);
+    margin-bottom: 30px;
+}
+
+.content .items-content .row {
+    width: 100%;
+}
+
+.content .workspace-wrapper .col-lg-4 {
+    min-height: 400px;
+    cursor: pointer;
+    transition: .3s ease;
+    margin-bottom: 30px;
+}
+
+.content .workspace-wrapper .col-lg-4 .wrap {
+    transition: .3s ease;
+}
+
+.content .workspace-wrapper .col-lg-4:hover .wrap {
+    box-shadow: 0px 1px 3px rgba(155,155,155,0.3);
+    transition: .3s ease;
+}
+
+.content .items-content .col-lg-4 .headline {
+    width: 100%;
+    height: 200px;
+    background: #1b242f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .items-content .col-lg-4 .headline h5 {
+    color: white;
+    font-weight: 400;
+    font-size: 25px;
+    position: relative;
+    width: 100%;
+    padding: 0px 30px;
+}
+
+.content .items-content .col-lg-4 .headline h5::before {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 1.5px;
+    background: #e31b6d;
+    left: 30px;
+    bottom: -5px;
+}
+
+.content .items-content .col-lg-4 .w-content {
+    width: 100%;
+    min-height: 200px;
+    background: white;
+    padding: 15px;
+    position: relative;
+}
+
+.content .items-content .col-lg-4 .w-content .actions {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 15px;
+    color: rgb(100,100,100,0.8);
+    cursor: pointer;
+}
+
+.content .items-content .col-lg-4 .w-content .actions i {
+    position: relative;
+}
+
+.content .items-content .col-lg-4 .w-content .actions i .pop {
+    position: absolute;
+    word-break: normal;
+    font-size: 15px;
+    top: -30px;
+    left: 10px;
+    color: white;
+    background: #1b242f;
+    text-transform: initial;
+    font-weight: 500;
+    font-family: 'Raleway', sans-serif;
+    padding: 5px 15px;
+    border-radius: 20px;
+    min-width: 185px;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+.content .items-content .col-lg-4 .w-content .actions i .pop::before {
+    width: 15px;
+    height: 15px;
+    background: #1b242f;
+    left: 0;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    /* transform: rotate(
+45deg); */
+    z-index: 1;
+    transition: .3s ease-in-out;
+}
+
+.content .items-content .col-lg-4 .w-content .actions i:hover {
+    color: #e31b6d;
+    transition: .3s ease-in-out;
+}
+
+.content .items-content .col-lg-4 .w-content .actions i:hover .pop {
+    opacity: 1;
+}
+
+.content .items-content .optionGroup .optionList {
+    background: white;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.content.prof .items-content {
+    padding-top: 90px;
+}
+
+.content .items-content .optionGroup .optionList h3 {
+    border-bottom: 1px rgb(230,230,230) solid;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.content .items-content .optionGroup .set-avatar .col-lg-6 {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+} 
+
+.content .items-content .col-lg-6 {
+    position: relative;
+} 
+
+.content .items-content .list.col-lg-6 {
+    margin-bottom: 30px;
+}
+
+.content .items-content .general-options #avatarInput {
+    background-color: #fff!important;
+    background-clip: padding-box!important;
+    border: 1px solid #ced4da!important;
+    border-radius: 0.35rem!important;
+    margin-top: 30px;
+}
+
+.content .items-content .security-options .curr_pwd {
+    padding-right: 25px;
+}
+
+.content .items-content .security-options .row label {
+    left: 20px!important;
+}
+
+.content .items-content .security-options .row .form-control:focus ~ label,
+.content .items-content .security-options .row .form-control:valid ~ label {
+    left: 10px!important;
+}
+
+.content .items-content .security-options .form-group {
+    margin-bottom: 30px;
+}
+
+.content .items-content .workspace-wrapper .list .innerContent {
+    background: white;
+    padding: 20px;
+    border-radius: 0.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.content .items-content .workspace-wrapper .list .innerContent .progressbar {
+    position: absolute;
+    width: 100%;
+    background: rgba(155,155,155,0.3);
+    height: 5px;
+    left: 0;
+    top: 0;
+}
+
+.content .items-content .workspace-wrapper .list .innerContent .progressbar .currentProgress {
+    width: 0%;
+    height: 100%;
+    background: green;
+    transition: .5s ease;
+}
+
+.content .items-content .workspace-wrapper .list .innerContent h3 {
+    border-bottom: rgb(230,230,230) solid 1px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.content .items-content .workspace-wrapper .list .innerContent h3 .list-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.content .items-content .workspace-wrapper .list .innerContent h3 .list-actions i {
+    font-size: 10px;
+    margin-right: 0;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.content .items-content .workspace-wrapper .list .innerContent h3 .list-actions i:hover {
+    color: #e31b6d;
+}
+
+.content .items-content .workspace-wrapper .list .input-container {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 17px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding-top: 5px;
+}
+
+.content .items-content .workspace-wrapper .list .input-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.content .items-content .workspace-wrapper .list .input-container .checkmark {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: .25rem;
+    background-color: #eee;
+}
+.content .items-content .workspace-wrapper .list .input-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.content .items-content .workspace-wrapper .list .input-container input:checked ~ .checkmark {
+    background-color: #1b242f;
+}
+.content .items-content .workspace-wrapper .list .input-container .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.content .items-content .workspace-wrapper .list .input-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.content .items-content .workspace-wrapper .list .input-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.content .items-content .workspace-wrapper .list .add-item {
+    text-align: center;
+    border-radius: 0.25rem;
+    padding: 5px 0px;
+    border: 1px rgb(200,200,200) dashed;
+    color: rgb(200,200,200);
+    cursor: pointer;
+}
+
+.content .items-content .workspace-wrapper .list .item {
+    position: relative;
+}
+
+.content .items-content .workspace-wrapper .list .item .item-actions {
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+.content .items-content .workspace-wrapper .list .item .item-actions i {
+    font-size: 10px;
+    color: rgb(155 155 155);
+    margin-right: 0px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.content .items-content .workspace-wrapper .list .item {
+    padding-right: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.content .items-content .workspace-wrapper .list .item .item-actions i:hover {
+    color: black;
+}
+
+.content .list-actions .sorts {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: white;
+    z-index: 999;
+    left: 0;
+    right: 0;
+    top: 100%;
+    border: 1px rgb(245,245,245) solid;
+    box-shadow: 0px 1px 3px rgb(245 245 245);
+    display: none;
+}
+
+.content .list-actions .sorts.shown {
+    display: block;
+}

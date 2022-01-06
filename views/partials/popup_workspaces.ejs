@@ -1,0 +1,90 @@
+<div class="popup">
+    <div class="popup-content addWorkspace col-lg-4">
+        <span class="close" onclick="hidePopup()">X</span>
+        <h3>Add Workspace</h3>
+        <form method="POST" id="addWorkspace">
+            <div class="form-group">
+                <input type="text" class="form-control" name="workspace_name" id="workspace_name" required/>
+                <span class="highlight"></span>
+                <label for="email">Name of workspace</label>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" name="workspace_description" id="workspace_description" required></textarea>
+                <span class="highlight"></span>
+                <label for="email">Description of workspace</label>
+            </div>
+            <div class="form-group">
+                <button type="submit">Create Workspace</button>
+            </div>
+        </form>
+    </div>
+    <div class="popup-content modal-window col-lg-3">
+        <span class="close" onclick="hidePopup()">X</span>
+        <h3>Delete Workspace?</h3>
+        <p>Are you sure?</p>
+        <div class="row">
+            <div class="col-lg-6">
+                <button class="btn btn-outline-dark" id="deleteWorkspace">Yes</button>
+            </div>
+            <div class="col-lg-6" style="display: flex; justify-content: flex-end;">
+                <button onclick="hidePopup()" class="btn btn-outline-dark">No</button>
+            </div>
+        </div>
+    </div>
+  
+    <div class="popup-content export-window col-lg-6">
+      <span class="close" onclick="hidePopup()">X</span>
+      <h3>Export workspace <a class="raw" href="#">raw</a> </h3>
+      <div class="hint">
+        <i onclick="copyToClipboard()" onmouseout="outFunc()" class="far fa-copy"></i>
+        <span id="hintText" class="hintText">Copy to clipboard</span>
+      </div>
+      <textarea readonly name="jsonExport" id="jsonExport" class="form-control" style="height: 500px"></textarea>
+    </div>
+    <div class="popup-content import-window col-lg-6">
+        <span class="close" onclick="hidePopup()">X</span>
+        <h3>Import workspace</h3>
+        <form method="POST" onsubmit="handleImport(event)">
+            <div class="form-group">
+                <textarea name="jsonImport" id="jsonImport" class="form-control" style="height: 500px"></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-submit" type="submit">Import workspace</button>
+            </div>
+        </form>
+    </div>
+    <div class="popup-content edit-workspace col-lg-4">
+        <span class="close" onclick="hidePopup()">X</span>
+        <h3>Edit workspace</h3>
+        <form method="POST" id="editWorkspace">
+            <div class="form-group">
+                <input type="text" class="form-control" name="e_workspace_name" id="e_workspace_name" />
+                <span class="highlight"></span>
+                <label for="email">Name of workspace</label>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" name="e_workspace_description" id="e_workspace_description"></textarea>
+                <span class="highlight"></span>
+                <label for="email">Description of workspace</label>
+            </div>
+            <div class="form-group">
+                <button type="submit">Edit Workspace</button>
+            </div>
+        </form>        
+    </div>
+  </div>
+
+
+  <script>
+    function displayPopup() {
+        $(".popup")
+        .css("display", "flex")
+        .hide()
+        .fadeIn()
+    }
+
+    function hidePopup() {
+        $(".popup")
+        .fadeOut()
+    }
+  </script>
