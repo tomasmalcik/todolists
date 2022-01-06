@@ -36,17 +36,19 @@ app.use ((req, res, next) => {  //Add url to response (checking in ejs layout wh
     res.locals.protocol = req.protocol;
     next();
 });
-app.use((req, res, next) => {
+
+app.use((req, res, next) => { //XSS protection.
+    //Iterate through the whole request body using recursion
     function recurse(obj) {
-        for (const key in obj) {
+        for (const key in obj) { 
             let value = obj[key];
             if(value != undefined) {
-                if (value && typeof value === 'object') {
+                if (value && typeof value === 'object') { //Another document, start recursion again
                     recurse(value, key);
-                }else if(typeof value === 'boolean') {
+                }else if(typeof value === 'boolean') { //Ignore boolean values
                     continue
                 }else {
-                    obj[key] = striptags(obj[key])
+                    obj[key] = striptags(obj[key]) //Strip tags from string in req.body
                 }
             }
         }
