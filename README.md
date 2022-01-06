@@ -22,6 +22,15 @@ This project uses MVC model on backEnd. It is split to
 - Controller (routes)
     - Houses every route on website (frontEnd and backEnd).
 #### REST
+BackEnd uses REST architecture. Each API call is categorized to these actions:
+- GET
+    - Collect any data from API. Returning JSON objects. 
+- POST
+    - Add new document to database
+- PUT
+    - Update already created document
+- DELETE
+    - Delete document
 ### FrontEnd
 #### JS 
 #### JQuery
