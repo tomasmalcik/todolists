@@ -43,3 +43,23 @@ Styling is an important part of this project. The whole project is set up to be 
 [Font Awesome](https://fontawesome.com/) was used for icons. Only the free version icons were implemented in the application
 
 ## Quick guide
+Quick guide on how to use this project explained in a few steps
+### Registration and Login
+After opening the [website](), a login form is shown. If you already have an account you can proceed to the next step. If not, you can [click this link]() to go straight to registration, or click on the "Sing Up" link in the bottom part of login form. After registrating or loggin in you get redirected to workspaces
+### Workspaces
+#### Creating a workspace
+This part is used for creating multiple projects(workspaces). If you don't have any workspace yet, you can click on the button in the middle of the page, or you can use the link in the sidebar on the left side. After clicking that a modal window pops up, where you can specify the name and description of project(workspace).
+#### Export, Edit, Delete
+After creating one, these three actions become available. They are represented by icons inside the workspace, on the bottom part of it.
+- First one specifies **export** function - It generates a JSON file that you can copy or display in the raw form
+- Second one is for editing - after clicking it, the same modal as for adding pops up, there you can edit the name and description.
+- Third one is for deleting the whole workspace. After clicking it, modal that asks you whether you really want to delete this or not.
+#### Import
+After you export a workspace. You can send it to someone, who can import it and start using it. Click the **Import workspace** and paste in copied JSON and click import.
+### Workspace(Lists)
+#### Add
+#### Edit, Export, Delete
+#### Import
+#### Adding to list, editing items, deleting them
+### List Filter
+### Profile
