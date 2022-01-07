@@ -1,3 +1,11 @@
+# Testing
+URL to site: [https://todolist-malcik.herokuapp.com/](https://todolist-malcik.herokuapp.com/)
+URL to workspace JSON: [https://todolist-malcik.herokuapp.com/workspaces/61d81711273068264c3898c4/json](https://todolist-malcik.herokuapp.com/workspaces/61d81711273068264c3898c4/json)
+URL to list JSON: [https://todolist-malcik.herokuapp.com/todolists/61d8171e273068264c3898c9/json](https://todolist-malcik.herokuapp.com/todolists/61d8171e273068264c3898c9/json)
+
+## Login information
+email: semestralWEA@semestralWEA.com
+password: semestralWEA
 # ToDo Lists
 This project is written in **nodeJS** Using **express** and **ejs**
 It uses MongoDB via mongoose as database. Each function has comment explaining its usage
