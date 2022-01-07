@@ -14,7 +14,7 @@ const fetchData = async (id) => {
 
 function displayLists() {
     console.log("called")
-    //$(".no-work").hide()
+    $(".no-work").hide()
     let innerHTML = ""
     workspace.lists.forEach(element => {
       innerHTML += List(element.title, element.items, (element.completion.checked / element.completion.total)*100, element._id)
@@ -88,7 +88,11 @@ function copyToClipboard() {
 async function init_workspace() {
     //fetch lists
     await fetchData(workspace_id)
-    displayLists()
+    if(workspace.lists.length != 0) {
+        $(".no-work").hide()
+        displayLists()
+
+    }
     user = JSON.parse(window.localStorage.getItem("user_data"))
     setUserOptions(user)
 
@@ -259,7 +263,13 @@ async function removeList(id) {
     }
 
     await fetchData(workspace_id)
-    displayLists()
+    if(workspace.lists.length == 0) {
+        $(".no-work").css("display","flex")
+        $(".lists").html("")
+    }else {
+        displayLists()
+    }
+    
     displaySuccess(res.data)
 }
 
