@@ -2,7 +2,7 @@
 This project is written in **nodeJS** Using **express** and **ejs**
 It uses MongoDB via mongoose as database. Each function has comment explaining its usage
 
-## description of project
+## Technical description
 
 ### Security
 In this project I tried to protect against multiple types of attacks. Every route that should be protected is secured by [middleware](https://github.com/tomasmalcik/todolists/blob/master/private/middlewares/users.js#L6). That ensures that user is logged in.
@@ -32,9 +32,14 @@ BackEnd uses REST architecture. Each API call is categorized to these actions:
 - DELETE
     - Delete document
 ### FrontEnd
-#### JS 
+Project uses [EJS](https://ejs.co/) as an framework for displaying frontend of application. Each page is controlled by javascript and styled with CSS using [bootstrap](https://getbootstrap.com/) as grid tool. These pages have mostly html in them. EJS scripting is used only to include links based on URL.
+#### JS
+Javascript files are located in the [js](https://github.com/tomasmalcik/todolists/tree/master/private/js) Folder. This folder houses components, handler for JWT and [logic](https://github.com/tomasmalcik/todolists/tree/master/private/js/logic) folder. This one is the most important one. Each file has set of functions that makes the whole page function. From visual functions to API calls.
 #### JQuery
+JQuery is used mostly for visual in this application. Sometimes it is used for locating elements and toggling classes in the DOM
 #### CSS + Bootstrap
+Styling is an important part of this project. The whole project is set up to be appealing to the eye of user. Not too many colors, but nonetheless good looking.
 #### Icons
+[Font Awesome](https://fontawesome.com/) was used for icons. Only the free version icons were implemented in the application
 
 ## Quick guide
