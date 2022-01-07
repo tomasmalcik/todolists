@@ -113,7 +113,7 @@ async function exportList(id) {
     $(".popup").children().hide()
     //add to textarea
     $("#jsonExport").html(JSON.stringify(res.data, undefined, 4))
-    $(".raw").attr("onclick",`window.location.href="/todolists/${id}/json"`)
+    $(".raw").attr("onclick",`window.open("/todolists/${id}/json", "_blank")`)
     $(".export-window").show()
 
     displayPopup()

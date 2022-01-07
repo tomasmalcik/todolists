@@ -155,7 +155,6 @@ async function exportWorkspace(e, id) {
   const res = await fetch(`/workspaces/${id}/json`, {
     method: "GET"
   }).then(res => res.json())
-  //remove ids and __v
 
   if(res.status == "error") {
     displayBanner(res.error)
@@ -166,7 +165,7 @@ async function exportWorkspace(e, id) {
   $(".popup").children().hide()
   //add to textarea
   $("#jsonExport").html(JSON.stringify(res, undefined, 4))
-  $(".raw").attr("onclick",`window.location.href="/workspaces/${id}/json"`)
+  $(".raw").attr("onclick",`window.open("/workspaces/${id}/json", "_blank")`)
   $(".export-window").show()
   
   displayPopup()
