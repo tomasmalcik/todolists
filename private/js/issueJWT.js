@@ -7,8 +7,7 @@ async function issueJWT(user) {
 
     const payload = {
         sub: _id,
-        iat: Date.now(),
-        honza: "smrdi"
+        iat: Date.now()
     }
 
     const signedToken = jwt.sign(payload, process.env.TOKEN_SECRET, {
